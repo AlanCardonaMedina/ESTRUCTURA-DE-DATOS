@@ -1,0 +1,24 @@
+pila = []#array vacio
+size = 5#tamaño de la pila
+
+def push(x):#funcion push
+    if len(pila) < size:#otorga un tamaño a la pila
+        pila.append(x)#ingrea el valor dado por el usuario a la pila
+    else:
+        print("!Pila llena¡")#mesaje de pila llena
+        
+def Menu():#funcion menu
+    print("Menu:")
+    print("Ingrese numero 1 para la opcion push")
+opc = int(input())
+if (opc==1):
+        print("Ingrese el numero que desea ingresar a la pila")
+        x = int(input())#recibe un dato para ingresar a la pila
+        push(x);#manda a llamar a la funcion pila y manda parametro x
+        print("Valor ingresado")
+        Menu();#manda a llamar a la funcion menu
+else:
+        print("opcion no valida")
+        Menu();#manda a llamar a la funcion menu
+        
+Menu();#manda a llamar a la funcion menu
