@@ -1,0 +1,36 @@
+pila = []#array vacio
+size = 5#tamaño de la pila
+
+def push(x):#funcion push
+    if len(pila) < size:#otorga un tamaño a la pila
+        pila.append(x)#ingrea el valor dado por el usuario a la pila
+    else:
+        print("!Pila llena¡")#mesaje de pila llena
+        
+def pop():#funcion pop
+    if 0 < len(pila):#condicion para saber que la pila no se encuentra vacia
+        print("Valor eliminado de la pila:")
+        print(pila[len(pila)-1])#imprime el ultimo dato de la pila
+        pila.pop()#elimina el ultimo dato de la pila
+    else:
+        print("!Pila vacia¡")#mensaje de pila vacia
+        
+def Menu():#funcion menu
+    print("Menu:")
+    print("Ingrese numero 1 para la opcion push")
+    print("Ingrese numero 2 para la opcion pop")
+opc = int(input())
+if (opc==1):
+        print("Ingrese el numero que desea ingresar a la pila")
+        x = int(input())#recibe un dato para ingresar a la pila
+        push(x);#manda a llamar a la funcion pila y manda parametro x
+        print("Valor ingresado")
+        Menu();#manda a llamar a la funcion menu
+if (opc==2):
+        pop();#manda a llamar a la funcion pop
+        Menu();#manda a llamar a la funcion menu
+else:
+        print("opcion no valida")
+        Menu();#manda a llamar a la funcion menu
+        
+Menu();#manda a llamar a la funcion menu
