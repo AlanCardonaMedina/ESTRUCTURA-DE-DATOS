@@ -1,0 +1,104 @@
+index = 0
+x = 0
+
+def create():
+    cola = [0, 0, 0, 0, 0]
+    index=0
+    return cola, index
+    
+var, index=create()
+print("------------------------------------")
+print("cola =", var)
+print("Tamaño de la cola: ", len(var))
+print("------------------------------------")
+
+def push(var, x, index):
+    
+    if index == 0:
+        var[index] = x;
+        index+=1
+        print("------------------------------------")
+        print("Valor agregado:", var[len(var)-5])
+        return (var, x, index)
+    
+    elif index == 1:
+        var[index] = x;
+        index+=1
+        print("------------------------------------")
+        print("Valor agregado:", var[len(var)-4])
+        return (var, x, index)
+    elif index == 2:
+        var[index] = x;
+        index+=1
+        print("------------------------------------")
+        print("Valor agregado:", var[len(var)-3])
+        return (var, x, index)
+    elif index == 3:
+        var[index] = x;
+        index+=1
+        print("------------------------------------")
+        print("Valor agregado:", var[len(var)-2])
+        return (var, x, index)
+    elif index == 4:
+        var[index] = x;
+        index+=1
+        print("------------------------------------")
+        print("Valor agregado:", var[len(var)-1])
+        return (var, x, index)
+    else:
+        print("La cola esta llena")
+        return (var, x, index)
+
+def pop(var, index):
+    print("------------------------------------")
+    print("Valor eliminado: ", var[len(var)-5])
+    var[0] = var[1]
+    var[1] = var[2]
+    var[2] = var[3]
+    var[3] = var[4]
+    var[4] = 0
+    index-=1
+    print("cola =", var)
+    print("------------------------------------")
+    return var, index
+
+def peek(var):
+    print("------------------------------------")
+    print("Ultimo dato de la cola:")  
+    print(var[len(var)-1])
+    print("------------------------------------")
+    return var
+
+
+        
+def Menu(var, index):
+    z = True
+    while z == True:
+        print("Menu:")
+        print("Seleccione una opcion:")
+        print("1-.Encolar(push)")
+        print("2-.Desencolar(pop)")
+        print("3-.Ultimo dato de la cola(peek)")
+        print("4-.Cerra programa")
+
+        i = int(input())
+        if (i == 1):
+            print("Ingrese un valor a la cola:")
+            x = input()
+            var, x, index= push(var, x, index);
+            print("Cola=", var)
+            print("------------------------------------")
+
+        if (i == 2):
+            var, index = pop(var, index);
+
+            if index < 0:
+                print("Cola vacia")
+
+        if (i == 3):
+            var = peek(var);
+
+        if (i == 4):
+             z = False
+
+Menu(var, index)
