@@ -1,0 +1,47 @@
+migracion = []
+
+def push(x):
+    migracion.append(x)
+
+def pop():
+    if len(migracion) >= 1:
+        print("Migracion numero",migracion[len(migracion)-1],"eliminada")
+        migracion.pop()
+
+    else:
+        print("No contine ningun dato") 
+        
+def peek(n):
+    if len(migracion) >= 1:
+        if n <= len(migracion):
+            print(migracion[len(migracion)-n])
+        else:
+            print("No existe inguna migracion en",n,"posicion")
+         
+    else:
+        print("No contine ningun dato")        
+         
+def menu():
+    while True:
+        print("Menu:")
+        print("1-Agregar una migracion")
+        print("2-Eliminar una migracion")
+        print("3-Visualizar migracion actual")
+        i=int(input())
+
+        if (i == 1):
+            print("Ingresa el numero de migracion:")
+            x=int(input())
+            push(x)
+            print("Migracion numero",x,"agregada")
+            
+        if (i == 2):   
+            pop()
+
+        if (i == 3):
+            print("Introdusca la posicion de migracion(recienre a antigua)")
+            n = int(input())
+            peek(n)
+            
+menu()
+    
