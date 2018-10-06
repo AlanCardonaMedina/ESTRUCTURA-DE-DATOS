@@ -1,0 +1,102 @@
+index = 0
+x = 0
+
+def create():
+    cola = [0, 0, 0, 0, 0]
+    index=0
+    return cola, index
+
+var, index=create()
+def push(var, x, index):
+    
+    if index == 0:
+        var[index] = x;
+        index+=1
+        print("------------------------------------")
+        print("Cliente numero",var[len(var)-5],"a ingrsado a la fila")
+        return (var, x, index)
+    
+    elif index == 1:
+        var[index] = x;
+        index+=1
+        print("------------------------------------")
+        print("Cliente numero",var[len(var)-4],"a ingrsado a la fila")
+        return (var, x, index)
+    elif index == 2:
+        var[index] = x;
+        index+=1
+        print("------------------------------------")
+        print("Cliente numero",var[len(var)-3],"a ingrsado a la fila")
+        return (var, x, index)
+    elif index == 3:
+        var[index] = x;
+        index+=1
+        print("------------------------------------")
+        print("Cliente numero",var[len(var)-2],"a ingrsado a la fila")
+        return (var, x, index)
+    elif index == 4:
+        var[index] = x;
+        index+=1
+        print("------------------------------------")
+        print("Cliente numero",var[len(var)-1],"a ingrsado a la fila")
+        return (var, x, index)
+    else:
+        print("La fila esta llena")
+        return (var, x, index)
+
+def pop(var, index):
+    print("------------------------------------")
+    print("Cliente numero",var[len(var)-5],"a salido de la fila")
+    var[0] = var[1]
+    var[1] = var[2]
+    var[2] = var[3]
+    var[3] = var[4]
+    var[4] = 0
+    index-=1
+    print("fila =", var)
+    print("------------------------------------")
+    return var, index
+
+def peek(var,n):
+    print("------------------------------------")
+    if len(var) >= 1:
+        if n <= len(var):
+            print(var[len(var)-n])
+        else:
+            print("No existe ingun cliente en",n,"posicion")
+    print("------------------------------------")
+    return var
+       
+def Menu(var, index):
+    z = True
+    while z == True:
+        print("Menu:")
+        print("Seleccione una opcion:")
+        print("1-.Ingresar un cliente a la fila")
+        print("2-.Sacar a un clinete de la fila)")
+        print("3-.ver numero de cliente")
+        print("4-.Cerra programa")
+
+        i = int(input())
+        if (i == 1):
+            print("Ingrese el numero de cliente:")
+            x = input()
+            var, x, index= push(var, x, index);
+            print("Flia:", var)
+            print("------------------------------------")
+
+        if (i == 2):
+            var, index = pop(var, index);
+
+            if index < 0:
+                print("Fila vacia")
+
+        if (i == 3):
+            print("Introdusca la posicion del cliente( del mas recienre al mas antiguo)")
+            n = int(input())
+            var = peek(var,n);
+
+        if (i == 4):
+             z = False
+
+Menu(var, index)
