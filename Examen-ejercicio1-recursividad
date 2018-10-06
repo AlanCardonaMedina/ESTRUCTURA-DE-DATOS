@@ -1,0 +1,7 @@
+def sumas(x):
+    if x == 9:
+        return 9
+    else:
+        return x + sumas(x+1)
+         
+print(sumas(1))
