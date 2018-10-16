@@ -1,0 +1,59 @@
+index = 0
+x = 0
+
+def create():
+    cola = [0, 0, 0, 0, 0]
+    index=0
+    return cola, index
+
+var, index=create()
+def push(var, x, index):
+    
+    if index == 0:
+        var[index] = x;
+        index+=1
+        print("------------------------------------")
+        print("Cliente numero",var[len(var)-5],"a ingrsado a la fila")
+        return (var, x, index)
+    
+    elif index == 1:
+        var[index] = x;
+        index+=1
+        print("------------------------------------")
+        print("Cliente numero",var[len(var)-4],"a ingrsado a la fila")
+        return (var, x, index)
+    elif index == 2:
+        var[index] = x;
+        index+=1
+        print("------------------------------------")
+        print("Cliente numero",var[len(var)-3],"a ingrsado a la fila")
+        return (var, x, index)
+    elif index == 3:
+        var[index] = x;
+        index+=1
+        print("------------------------------------")
+        print("Cliente numero",var[len(var)-2],"a ingrsado a la fila")
+        return (var, x, index)
+    elif index == 4:
+        var[index] = x;
+        index+=1
+        print("------------------------------------")
+        print("Cliente numero",var[len(var)-1],"a ingrsado a la fila")
+        return (var, x, index)
+    else:
+        print("La fila esta llena")
+        return (var, x, index)
+ def Menu(var, index):
+    z = True
+    while z == True:
+        print("Menu:")
+        print("Seleccione una opcion:")
+         i = int(input())
+        if (i == 1):
+            print("Ingrese el numero de cliente:")
+            x = input()
+            var, x, index= push(var, x, index);
+            print("Flia:", var)
+            print("------------------------------------")
+Menu(var, index)
+        
