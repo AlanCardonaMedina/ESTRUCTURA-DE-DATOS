@@ -1,0 +1,142 @@
+index = 0
+inde=0
+x = 0
+
+def create():
+    cola = [0, 0, 0, 0, 0]
+    index=0
+    inde=0
+    return cola, index, inde
+    
+var, index, inde=create()
+print("------------------------------------")
+print("cola =", var)
+print("Tamaño de la cola: ", len(var))
+print("------------------------------------")
+
+def push(var, x, index):
+    
+    if index == 0:        
+        if var[index]!= 0:
+            print("cola llena")
+            return (var, x, index)
+        else:
+            var[index] = x;
+            index+=1
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-5])         
+            return (var, x, index)
+    
+    elif index == 1:
+        if var[index]!= 0:
+            print("cola llena")
+            return (var, x, index)         
+        else:
+            var[index] = x;
+            index+=1
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-4])
+            return (var, x, index)
+        
+    elif index == 2:
+        if var[index]!= 0:
+            print("cola llena")
+            return (var, x, index)
+        else:
+            var[index] = x;
+            index+=1
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-3])
+            return (var, x, index)
+    elif index == 3:
+        if var[index]!= 0:
+            print("cola llena")
+            return (var, x, index)
+        else:
+            var[index] = x;
+            index+=1
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-2])
+        return (var, x, index)
+    elif index == 4:
+        if var[index]!= 0:
+            print("cola llena")
+            return (var, x, index)
+        else:
+            var[index] = x;
+            index-=4
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-1])
+            return (var, x, index)
+
+def pop(var, inde):
+    print("------------------------------------")
+    if inde == 0:
+        if var[0]== 0:
+            print("cola vacia")
+            return (var, inde)
+        else:
+            var[0] = 0;
+            inde+=1
+            print("------------------------------------")
+            return (var, inde)
+    
+    elif inde == 1:
+        if var[1]== 0:
+            print("cola vacia")
+            return (var, inde)
+        else:
+            var[1] = 0;
+            inde+=1
+            print("------------------------------------")
+            return (var, inde)
+    elif inde == 2:
+        if var[2]== 0:
+            print("cola vacia")
+            return (var, inde)
+        else:
+            var[2] = 0;
+            inde+=1
+            print("------------------------------------")
+            return (var, inde)
+    elif inde == 3:
+        if var[3]== 0:
+            print("cola vacia")
+            return (var, inde)
+        else:
+            var[3] = 0;
+            inde+=1
+            print("------------------------------------")
+            return (var, inde)
+    elif inde == 4:
+        if var[4]== 0:
+            print("cola vacia")
+            return (var, inde)
+        else:
+            var[4] = 0;
+            inde-=4
+            print("------------------------------------")
+            return (var, inde)
+    print("cola =", var)
+    print("------------------------------------")
+    return var, inde
+        
+def Menu(var, index, inde):
+    z = True
+    while z == True:
+        print("Menu:")
+        print("Seleccione una opcion:")
+        print("1-.Encolar(push)")
+        print("2-.Desencolar(pop)")    
+         i = int(input())
+        if (i == 1):
+            print("Ingrese un valor a la cola:")
+            x = input()
+            var, x, index= push(var, x, index);
+            print("Cola=", var)
+            print("------------------------------------")
+
+        if (i == 2):
+            var, inde = pop(var, inde);
+Menu(var, index, inde)
+            
