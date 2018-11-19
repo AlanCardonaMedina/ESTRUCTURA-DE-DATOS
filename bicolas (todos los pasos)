@@ -1,0 +1,558 @@
+index = 0
+inde=0
+ind=5
+ide=5
+x = 0
+y = 0
+
+def create():
+    cola = [0, 0, 0, 0, 0, 0]
+    index=0
+    inde=0
+    ind=5
+    ide=5
+    return cola, index, inde,ind,ide
+    
+var, index, inde,ind, ide=create()
+print("------------------------------------")
+print("cola =", var)
+print("Tamaño de la cola: ", len(var))
+print("------------------------------------")
+
+def push_i(var, x, index):
+    
+    if index == 0:        
+        if var[index]!= 0:
+            while var[index]!=0:
+                index+=1
+                if var[index]==0:
+                    var[index]= x
+                    if index == 5:
+                        index == 0
+                    else:
+                        index+=1  
+                    return (var, x, index)
+                elif index > 5:
+                    index=0
+                    while var[index]!=0:
+                        index+=1
+                        if var[index]==0:                            
+                            var[index]= x
+                            index+=1
+                            return (var, x, index)
+                        elif index > 5:
+                            print("cola llena")
+                            index=0
+                            return (var, x, index)                                   
+        else:
+            var[index] = x;
+            index+=1
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-6])         
+            return (var, x, index)
+    
+    elif index == 1:
+        if var[index]!= 0:
+            while var[index]!=0:
+                index+=1
+                if var[index]==0:
+                    var[index]= x
+                    if index == 5:
+                        index == 0
+                    else:
+                        index+=1
+                    return (var, x, index)
+                elif index > 5:
+                    index=0
+                    while var[index]!=0:
+                        index+=1
+                        if var[index]==0:                            
+                            var[index]= x
+                            index+=1
+                            return (var, x, index)
+                        elif index > 5:
+                            print("cola llena")
+                            index=1
+                            return (var, x, index)
+        else:
+            var[index] = x;
+            index+=1
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-5])
+            return (var, x, index)
+        
+    elif index == 2:
+        if var[index]!= 0:
+            while var[index]!=0:
+                index+=1
+                if var[index]==0:
+                    var[index]= x
+                    if index == 5:
+                        index == 0
+                    else:
+                        index+=1
+                    return (var, x, index)
+                elif index > 5:
+                    index=0
+                    while var[index]!=0:
+                        index+=1
+                        if var[index]==0:                            
+                            var[index]= x
+                            index+=1
+                            return (var, x, index)
+                        elif index > 5:
+                            print("cola llena")
+                            index=2
+                            return (var, x, index)
+
+        else:
+            var[index] = x;
+            index+=1
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-4])
+            return (var, x, index)
+    elif index == 3:
+        if var[index]!= 0:
+            while var[index]!=0:
+                index+=1
+                if var[index]==0:
+                    var[index]= x
+                    if index == 5:
+                        index == 0
+                    else:
+                        index+=1
+                    return (var, x, index)
+                elif index > 5:
+                    index=0
+                    while var[index]!=0:
+                        index+=1
+                        if var[index]==0:                            
+                            var[index]= x
+                            index+=1
+                            return (var, x, index)
+                        elif index > 5:
+                            print("cola llena")
+                            index=3
+                            return (var, x, index)
+
+        else:
+            var[index] = x;
+            index+=1
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-3])
+        return (var, x, index)
+    elif index == 4:
+        if var[index]!= 0:
+            while var[index]!=0:
+                index+=1
+                if var[index]==0:
+                    var[index]= x
+                    if index == 5:
+                        index == 0
+                    else:
+                        index+=1
+                    return (var, x, index)
+                elif index > 5:
+                    index=0
+                    while var[index]!=0:
+                        index+=1
+                        if var[index]==0:                            
+                            var[index]= x
+                            index+=1
+                            return (var, x, index)
+                        elif index > 5:
+                            print("cola llena")
+                            index=4
+                            return (var, x, index)
+        else:
+            var[index] = x;
+            index+=1
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-2])
+            return (var, x, index)
+    elif index == 5:
+        if var[index]!= 0:
+            while var[index]!=0:
+                index+=1
+                if var[index]==0:
+                    var[index]= x
+                    if index == 5:
+                        index == 0
+                    else:
+                        index+=1
+                    return (var, x, index)
+                elif index > 5:
+                    index=0
+                    while var[index]!=0:
+                        index+=1
+                        if var[index]==0:                            
+                            var[index]= x
+                            index+=1
+                            return (var, x, index)
+                        elif index > 5:
+                            print("cola llena")
+                            index=5
+                            return (var, x, index)
+        else:
+            var[index] = x;
+            index-=5
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-1])
+            return (var, x, index)
+def push_d(var, y, ind):
+    if ind == 5:        
+        if var[ind]!= 0:
+            while var[ind]!=0:
+                ind-=1
+                if var[ind]==0:
+                    var[ind]= y
+                    if ind == 0:
+                        ind == 5
+                    else:
+                        ind-=1
+                    return (var, y, ind)
+                elif ind < 0:
+                    ind=5
+                    while var[ind]!=0:
+                        ind-=1
+                        if var[ind]==0:                            
+                            var[ind]= y
+                            ind-=1
+                            return (var, y, ind)
+                        elif ind < 0:
+                            print("cola llena")
+                            ind=5
+                            return (var, y, ind)
+        else:
+            var[ind] = y;
+            ind-=1
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-6])         
+            return (var, y, ind)
+    
+    elif ind == 4:
+        if var[ind]!= 0:
+            while var[ind]!=0:
+                ind-=1
+                if var[ind]==0:
+                    var[ind]= y
+                    if ind == 0:
+                        ind == 5
+                    else:
+                        ind-=1
+                    return (var, y, ind)
+                elif ind < 0:
+                    ind=5
+                    while var[ind]!=0:
+                        ind-=1
+                        if var[ind]==0:                            
+                            var[ind]= y
+                            ind-=1
+                            return (var, y, ind)
+                        elif ind < 0:
+                            print("cola llena")
+                            ind=4
+                            return (var, y, ind)         
+        else:
+            var[ind] = y;
+            ind-=1
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-5])
+            return (var, y, ind)
+        
+    elif ind == 3:
+        if var[ind]!= 0:
+            while var[ind]!=0:
+                ind-=1
+                if var[ind]==0:
+                    var[ind]= y
+                    if ind == 0:
+                        ind == 5
+                    else:
+                        ind-=1
+                    return (var, y, ind)
+                elif ind < 0:
+                    ind=5
+                    while var[ind]!=0:
+                        ind-=1
+                        if var[ind]==0:                            
+                            var[ind]= y
+                            ind-=1
+                            return (var, y, ind)
+                        elif ind < 0:
+                            print("cola llena")
+                            ind=3
+                            return (var, y, ind)
+        else:
+            var[ind] = y;
+            ind-=1
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-4])
+            return (var, x, ind)
+    elif ind == 2:
+        if var[ind]!= 0:
+            while var[ind]!=0:
+                ind-=1
+                if var[ind]==0:
+                    var[ind]= y
+                    if ind == 0:
+                        ind == 5
+                    else:
+                        ind-=1
+                    return (var, y, ind)
+                elif ind < 0:
+                    ind=5
+                    while var[ind]!=0:
+                        ind-=1
+                        if var[ind]==0:                            
+                            var[ind]= y
+                            ind-=1
+                            return (var, y, ind)
+                        elif ind < 0:
+                            print("cola llena")
+                            ind=2
+                            return (var, y, ind)
+        else:
+            var[ind] = y;
+            ind-=1
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-3])
+        return (var, y, ind)
+    elif ind == 1:
+        if var[ind]!= 0:
+            while var[ind]!=0:
+                ind-=1
+                if var[ind]==0:
+                    var[ind]= y
+                    if ind == 0:
+                        ind == 5
+                    else:
+                        ind-=1
+                    return (var, y, ind)
+                elif ind < 0:
+                    ind=5
+                    while var[ind]!=0:
+                        ind-=1
+                        if var[ind]==0:                            
+                            var[ind]= y
+                            ind-=1
+                            return (var, y, ind)
+                        elif ind < 0:
+                            print("cola llena")
+                            ind=1
+                            return (var, y, ind)
+        else:
+            var[ind] = y;
+            ind-=1
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-2])
+            return (var, y, ind)
+    elif ind == 0:
+        if var[ind]!= 0:
+            while var[ind]!=0:
+                ind-=1
+                if var[ind]==0:
+                    var[ind]= y
+                    if ind == 0:
+                        ind == 5
+                    else:
+                        ind-=1
+                    return (var, y, ind)
+                elif ind < 0:
+                    ind=5
+                    while var[ind]!=0:
+                        ind-=1
+                        if var[ind]==0:                            
+                            var[ind]= y
+                            ind-=1
+                            return (var, y, ind)
+                        elif ind < 0:
+                            print("cola llena")
+                            ind=0
+                            return (var, y, ind)
+        else:
+            var[ind] = y;
+            ind+=5
+            print("------------------------------------")
+            print("Valor agregado:", var[len(var)-1])
+            return (var, y, ind)
+def pop_i(var, inde):
+    print("------------------------------------")
+    if inde == 0:
+        if var[0]== 0:
+            print("cola vacia")
+            return (var, inde)
+        else:
+            print("Valor eliminado:", var[len(var)-6])
+            var[0] = 0;
+            inde+=1
+            print("------------------------------------")
+            
+            return (var, inde)
+    
+    elif inde == 1:
+        if var[1]== 0:
+            print("cola vacia")
+            return (var, inde)
+        else:
+            print("------------------------------------")
+            print("Valor eliminado:", var[len(var)-5])
+            var[1] = 0;
+            inde+=1
+            print("------------------------------------")
+            return (var, inde)
+    elif inde == 2:
+        if var[2]== 0:
+            print("cola vacia")
+            return (var, inde)
+        else:
+            print("------------------------------------")
+            print("Valor eliminado:", var[len(var)-4])
+            var[2] = 0;
+            inde+=1
+            print("------------------------------------")
+            return (var, inde)
+    elif inde == 3:
+        if var[3]== 0:
+            print("cola vacia")
+            return (var, inde)
+        else:
+            print("------------------------------------")
+            print("Valor eliminado:", var[len(var)-3])
+            var[3] = 0;
+            inde+=1
+            print("------------------------------------")
+            return (var, inde)
+    elif inde == 4:
+        if var[4]== 0:
+            print("cola vacia")
+            return (var, inde)
+        else:
+            print("------------------------------------")
+            print("Valor eliminado:", var[len(var)-2])
+            var[4] = 0;
+            inde+=1
+            print("------------------------------------")
+            return (var, inde)
+    elif inde == 5:
+        if var[5]== 0:
+            print("cola vacia")
+            return (var, inde)
+        else:
+            print("------------------------------------")
+            print("Valor eliminado:", var[len(var)-1])
+            var[5] = 0;
+            inde-=5
+            print("------------------------------------")
+            return (var, inde)
+    print("cola =", var)
+    print("------------------------------------")
+    return var, inde
+def pop_d(var, ide):
+    print("------------------------------------")
+    if ide == 5:
+        if var[5]== 0:
+            print("cola vacia")
+            return (var, ide)
+        else:
+            print("Valor eliminado:", var[len(var)-6])
+            var[5] = 0;
+            ide-=1
+            print("------------------------------------")
+            
+            return (var, ide)
+    
+    elif ide == 4:
+        if var[4]== 0:
+            print("cola vacia")
+            return (var, ide)
+        else:
+            print("------------------------------------")
+            print("Valor eliminado:", var[len(var)-5])
+            var[4] = 0;
+            ide-=1
+            print("------------------------------------")
+            return (var, ide)
+    elif ide == 3:
+        if var[3]== 0:
+            print("cola vacia")
+            return (var, ide)
+        else:
+            print("------------------------------------")
+            print("Valor eliminado:", var[len(var)-4])
+            var[3] = 0;
+            ide-=1
+            print("------------------------------------")
+            return (var, ide)
+    elif ide == 2:
+        if var[2]== 0:
+            print("cola vacia")
+            return (var, ide)
+        else:
+            print("------------------------------------")
+            print("Valor eliminado:", var[len(var)-3])
+            var[2] = 0;
+            ide-=1
+            print("------------------------------------")
+            return (var, ide)
+    elif ide == 1:
+        if var[1]== 0:
+            print("cola vacia")
+            return (var, ide)
+        else:
+            print("------------------------------------")
+            print("Valor eliminado:", var[len(var)-2])
+            var[1] = 0;
+            ide-=1
+            print("------------------------------------")
+            return (var, ide)
+    elif ide == 0:
+        if var[0]== 0:
+            print("cola vacia")
+            return (var, ide)
+        else:
+            print("------------------------------------")
+            print("Valor eliminado:", var[len(var)-1])
+            var[0] = 0;
+            ide+=5
+            print("------------------------------------")
+            return (var, ide)
+    print("cola =", var)
+    print("------------------------------------")
+    return var, ide
+def Menu(var, index, inde, ind, ide):
+    z = True
+    while z == True:
+        print("Menu:")
+        print("Seleccione una opcion:")
+        print("1-.Encolar lado izquierdo(push)")
+        print("2-.Encolar lado derecho (push)")
+        print("3-.Desencolar lado izquierdo(pop)")
+        print("4-.Desencolar lado derecho(pop)")
+        print("5-.Imprimir cola")
+
+        i = int(input())
+        if (i == 1):
+            print("Ingrese un valor a la cola:")
+            x = int(input())
+            var, x, index= push_i(var, x, index);
+            print("Cola=", var)
+            print("------------------------------------")
+
+        if (i == 2):
+            print("Ingrese un valor a la cola:")
+            y = int(input())
+            var, y, ind= push_d(var, y, ind);
+            print("Cola=", var)
+            print("------------------------------------")
+              
+        if (i == 3):
+            var, inde = pop_i(var, inde);
+
+        if (i == 4):
+            var, ide = pop_d(var, ide);
+            
+        if (i ==5):
+            print(var)
+
+Menu(var, index, inde, ind, ide);
