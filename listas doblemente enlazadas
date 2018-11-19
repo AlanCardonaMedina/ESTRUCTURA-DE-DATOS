@@ -1,0 +1,84 @@
+class Nodo:
+        def __init__(self, dato):
+            self.sig = None
+            self.ant = None
+            self.info = dato
+
+        def verNodo(self):
+            return(self.info)
+
+class lista:
+    def __init__(self):
+        self.cabeza = None
+        self.cola = None
+
+    def vacia(self):
+        if self.cabeza == None:
+            return True
+        else:
+            return False
+
+    def agregar_p(self, dato):
+        temporal = Nodo(dato)
+        if self.vacia() == True:
+            self.cabeza = temporal
+            self.cola = temporal
+        else:
+            temporal.sig = self.cabeza
+            self.cabeza.ant = temporal
+            self.cabeza =  temporal
+
+    def listar_i(self):
+        temporal =  self.cabeza
+        while temporal != None:
+            print(temporal.verNodo(),end=' ')
+            temporal = temporal.sig
+
+    def listar_d(self):
+        temporal =  self.cola
+        while temporal != None:
+            print(temporal. verNodo(),end=' ')
+            temporal = temporal.ant
+
+    def leer_final_d(self):
+        temporal = self.cabeza
+        print(temporal.verNodo())
+
+    def leer_final_i(self):
+        temporal = self.cola
+        print(temporal.verNodo())
+
+    def borrar_p(self):
+        if self.vacia() == False:
+            self.cabeza = self.cabeza.sig
+            self.cabeza.ant = None
+
+    def borrar_u(self):
+        if self.cola.ant == None:
+            self.cabeza = None
+            self.cola = None
+        else:
+            self.cola.ant
+            self.cola.sig = None
+
+    def borrar_p(self, pos):
+        ant = self.cabeza
+        act = self.cabeza
+        k = 0
+        if pos > 0:
+            while k != pos and act.sig != None:
+                ant = act
+                act = act.sig
+                k += 1
+            if k == pos:
+                temporal = act.sig
+                ant.sig = act.sig
+                temporal.ant = ant
+                
+    def buscar(self, dato):
+        aux = self.cabeza
+        while aux != None:
+            if int(aux.dato) == int(dato):
+                return(aux)
+            aux = aux.sig
+        return(None)
