@@ -1,0 +1,76 @@
+class Nodo:
+    def __init__(self, nombre=None, coigo=None, izq=None, der=None):
+        self.nombre = nombre
+        self.codigo = codigo
+        self.izq = izq
+        self.der = der
+
+    def __str__(self):
+        return "%s %s" %(self.nombre,self.codigo)
+class aBinarios:
+    def __init__(self):
+        self.raiz = None
+
+    def agregar(self, elemento):
+        if self.raiz == None:
+            self.raiz = elemento
+        else:
+            aux = self.raiz
+            padre = None
+            while aux != None:
+                padre = aux
+                if int(elemento.codigo) >= int(aux.codigo):
+                    aux = aux.der
+                else:
+                    aux = aux.izq
+            if int(elemento.codigo) >= int(padre.codigo):
+                padre.der = elemento
+            else:
+                padre.izq = elemento
+
+    def preorden(self, elemento):
+        if elemento != None:
+            print(elemento)
+            self.preorden(elemento.izq)
+            self.preorden(elemento.der)
+
+    def postorden(self, elemento):
+        if elemento != None:
+            self.postorden(elemento.izq)
+            self.postorden(elemento.der)
+            print(elemento)
+
+    def inorden(self, elemento):
+        if elemento != None:
+            self.inorden(elemento.izq)
+            print(elemento)
+            self.inorden(elemento.der)
+
+    def graiz(self):
+        return(self.raiz)
+        
+
+ab = aBinarios()
+while(True):
+    print("Menu")
+    print("1-agregar")
+    print("2-preorden")
+    print("3-postorden")
+    print("4-inorden")
+    num = int(input())
+    if num == 1:
+        print("ingresa un nombre")
+        nombre = input()
+        print("ingresa un codigo")
+        codigo = input()
+        nod = Nodo(nombre,codigo)
+        ab.agregar(nod)
+    elif num == 2:
+        print("imprimiendo por preorden:")
+        ab.preorden(ab.graiz())
+    elif num == 3:
+        print("imprimiendo por postorden:")
+        ab.postorden(ab.graiz())
+    elif num == 4:
+        print("imprimiendo por inorden:")
+        ab.inorden(ab.graiz())
