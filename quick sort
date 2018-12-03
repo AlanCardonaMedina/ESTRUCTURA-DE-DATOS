@@ -1,0 +1,19 @@
+def quicksort(F):
+        p = int(len(F)/2)
+        izq,mid,der = [],[],[]
+
+        for i in range(len(F)):
+            if F[i] < F[p]:
+                izq.append(F[i])
+            elif F[i] > F[p]:
+                der.append(F[i])
+            else:
+                mid.append(F[i])
+
+        if len(izq) > 1:
+            izq = quicksort(izq)
+        if len(der) > 1:
+            der = quicksort(der)
+        F= izq + mid + der
+   F=[789632145]
+   quicksort(F)
