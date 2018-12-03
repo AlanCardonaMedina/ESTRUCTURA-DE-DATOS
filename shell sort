@@ -1,0 +1,13 @@
+def shellsort(F):
+        p = len(F)//2
+        while p >0:
+            for i in range(p):
+                aux = F[i]
+                j = i
+                while j >= p and F[j-p] > aux:
+                    F[j] = F[j-p]
+                    j -= p
+                F[j] = aux
+            p //= 2
+F=[789632145]
+shellsort(F)
