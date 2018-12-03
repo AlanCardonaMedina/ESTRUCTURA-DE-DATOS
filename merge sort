@@ -1,0 +1,29 @@
+def mergesort(F):
+        if len(F)>1:
+            p = len(F)//2
+            izq = F[:p]
+            der = F[p:]
+
+            mergesort(izq)
+            mergesort(der)
+
+            i = j = k = 0
+
+            while i < len(izq) and j < len(der):
+                if izq[i] < der[j]:
+                    F[k] = izq[i]
+                    i += 1
+                else :
+                    F[k] = der[j]
+                    j += 1
+                k+=1
+            while i < len(izq):
+                F[k] = izq[i]
+                i += 1
+                k += 1
+            while j < len(der):
+                F[k] = der[j]
+                j += 1
+                k += 1
+F=[789632145]
+mergesort(F)
