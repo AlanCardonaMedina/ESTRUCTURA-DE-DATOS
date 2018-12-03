@@ -1,0 +1,12 @@
+    def bubble(F):
+        for i in range(len(F)-1):
+            y = 0
+            x = 1
+            if F[i] > F[i+x]:
+                y = F[i]
+                F[i] = F[i+x]
+                F[i+x] = y
+                x += 1
+                bubble(F)
+F=[579861]                
+bubble(F)             
